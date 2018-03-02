@@ -35,10 +35,21 @@ hbs.registerHelper('screamIt', (text) => {
 });
 
 app.get('/', (req, res) => {
-  // res.send('<h1>Hello Express!</h1>');
   res.render('home.hbs', {
     pageTitle: 'Home',
     welcomeMessage: 'Welcome to my website',
+    name: 'Sybren',
+    likes: [
+      'Surfing',
+      'Japan'
+    ]
+  })
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projecten',
+    welcomeMessage: 'Dit zijn de projecten',
     name: 'Sybren',
     likes: [
       'Surfing',
